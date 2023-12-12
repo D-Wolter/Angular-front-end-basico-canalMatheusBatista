@@ -1,0 +1,28 @@
+--------------terminal bash
+
+$ npm install -g @angular/cli
+
+---------------------------------------------------
+$ ng --help
+
+$ ng new curso-angular
+
+$ cd curso-angular/
+
+$ code .
+
+---------------dentro do terminal vscode
+$ ng serve
+
+
+            Initial Chunk Files | Names         |  Raw Size
+            polyfills.js        | polyfills     |  82.71 kB |
+            main.js             | main          |  23.23 kB |
+            styles.css          | styles        |  95 bytes |
+
+                                | Initial Total | 106.03 kB
+
+            Application bundle generation complete. [2.524 seconds]
+            Watch mode enabled. Watching for file changes...
+            ➜  Local:   http://localhost:4200/
+
