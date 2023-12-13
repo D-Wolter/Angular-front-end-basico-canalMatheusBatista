@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './first-component.component.css'
 })
 export class FirstComponentComponent {
+  name: string = 'Daniel';
+  age: number = 30;
 
 }

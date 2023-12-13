@@ -1,2 +1,15 @@
 $ ng generate component components/first-component
 
+depois de criado o componente, onde queremos importar o novo componente no caso no component app, cria uma nova tag que deve ter o 
+nome do selector localizado first-component.component.ts,
+
+ <app-first-component>
+
+
+
+ fazer importacao no arquivo app.components.ts
+
+ import { FirstComponentComponent } from "./components/first-component/first-component.component";
+
+ @Component({
+     imports: [CommonModule, RouterOutlet, FirstComponentComponent]
