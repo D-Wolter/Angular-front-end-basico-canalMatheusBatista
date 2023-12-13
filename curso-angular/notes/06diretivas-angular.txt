@@ -1,0 +1,48 @@
+diretivas sao funçoes que servem para varias coisas vamos ver como ele aplica estilos cssa elementos comecam com 
+
+ngAlgumaCoisa
+
+
+---------------------
+
+
+$ ng generate component components/directives
+
+
+------------------------------------
+
+
+dentro do pai app.html criamos a tag 
+
+<h1>Hello World Angular</h1>
+<app-first-component></app-first-component>
+<app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
+<app-directives></app-directives>
+
+
+-------------------------------------------
+
+
+adicionamos import ao app.component.ts
+
+import { DirectivesComponent } from "./components/directives/directives.component";
+
+@Component({
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [CommonModule, RouterOutlet, FirstComponentComponent, ParentDataComponent, DirectivesComponent]
+})
+
+
+---------------------------------------
+
+tentei adicionar a tag em derectives.html o [ngStyle] porem quebrou meu codigo.
+
+<h1 [ngStyle]="{ 'font-size': '12px' }">
+    directiva de estilo inline
+</h1>
+
+Can't bind to 'ngStyle' since it isn't a known property of 'h1'.ngtsc(-998002)
+directives.component.ts(3, 6): Error occurs in the template of component DirectivesComponent.
