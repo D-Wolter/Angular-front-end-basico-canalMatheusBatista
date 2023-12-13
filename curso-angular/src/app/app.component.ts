@@ -13,5 +13,9 @@ import { ParentDataComponent } from "./components/parent-data/parent-data.compon
 })
 export class AppComponent {
   userName = 'Dwolter';
+  userData = {
+    email: 'daniel@email.com',
+    role: 'Admin',
+  }
   title = 'curso-angular';
 }
