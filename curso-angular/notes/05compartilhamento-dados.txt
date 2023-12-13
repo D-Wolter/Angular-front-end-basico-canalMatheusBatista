@@ -1,0 +1,70 @@
+$ ng generate component components/parent-data
+------------------------
+criei a prop tag no app.html 
+<app-parent-data [name]="userName"></app-parent-data>
+-----------------------------
+
+cria no app.componente.ts a variavel
+
+export class AppComponent {
+  userName = 'Dwolter';
+
+  -------------------------------
+e importei no app.ts
+import { ParentDataComponent } from "./components/parent-data/parent-data.component";
+
+@Component({
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [CommonModule, RouterOutlet, FirstComponentComponent, ParentDataComponent]
+---------------------------------------------
+
+em parent data de outro componente no caso parent-data.ts decora com @Input
+
+import { Component, Input } from '@angular/core';
+
+export class ParentDataComponent {
+  @Input() name: string = '';
+
+}
+-------------------------------
+
+e dentro do parent-data.html adiciona a variavel criada no app.html no caso foi [name]
+
+<p>Nome: {{ name }}</p>
+
+
+
+compartilhamos od dados do componente pai para o filho
+
+
+-----------------------------
+----------------------------
+
+repetindo com objeto
+cria no app.componente.ts o objeto
+
+export class AppComponent {
+  userData = {
+    email: 'daniel@email.com',
+    role: 'Admin',
+  }
+
+------------------------------------
+
+no app.html criei a prop
+
+<app-parent-data [name]="userName" [userData="userData"]></app-parent-data>
+
+
+-----------------------
+
+agora no componente filho parent-data.ts inicia variavelcom valor padrao
+
+export class ParentDataComponent {
+  @Input() name: string = '';
+  @Input() userData: {email: string, role: string}
+
+}
