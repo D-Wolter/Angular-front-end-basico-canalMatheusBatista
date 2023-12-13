@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-directives',
@@ -7,14 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
 })
-export class DirectivesComponent {
+export class DirectivesComponent{
+  @Input() classes: string[] = ['green-title', 'small-title']
 
   size = 40;
-  
-  constructor() {}
-
-  ngOnInit(): void {
-
-  }
 
 }

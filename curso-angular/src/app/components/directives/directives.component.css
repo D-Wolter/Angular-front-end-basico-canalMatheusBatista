@@ -1,3 +1,9 @@
-h1 { 
-    color:rgb(253, 91, 91);
+
+
+.small-title {
+    font-size: 9px;
+}
+
+.green-title {
+    color: blue;
 }
