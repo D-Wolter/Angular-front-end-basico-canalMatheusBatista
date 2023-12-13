@@ -1,0 +1,1 @@
+angular tem por padrao a pasta para css de cada componente novo, e diferente do react que ultiliza className, ele ultiliza apena a prop class como no html simples.
