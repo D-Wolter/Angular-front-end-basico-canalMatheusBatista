@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './if-render.component.css'
 })
 export class IfRenderComponent implements OnInit {
-  @Input() canShow: boolean = true;
-  @Input() userType: string = 'premium'
-  @Input() role: string = 'base' //admin 
+  canShow: boolean = true;
+  userType: string = 'premium' 
+  role: string = '' // trocar p 'admin' para renderizar If inline
 
   constructor() {}
 
