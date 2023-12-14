@@ -1,0 +1,10 @@
+<div class="lesson">
+    <div *ngIf="canShow">if render condicional</div>
+    <div *ngIf="userType==='premium'">Cliente Premium</div>
+    <div *ngIf="role==='admin'; else msgAdminLogin">administrador</div>
+    <ng-template #msgAdminLogin>
+        <div>
+            <h2>É nescessáo entrar com login de Administrador</h2>
+        </div>
+    </ng-template>
+</div>
