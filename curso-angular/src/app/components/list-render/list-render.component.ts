@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Animal } from '../../interfaces/Animals';
-import { ListService  } from '../../list.service';
+import { ListService  } from '../../service/list.service';
 
 @Component({
   selector: 'app-list-render',
