@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Animal } from '../../interfaces/Animals';
 import { ListService  } from '../../service/list.service';
@@ -12,15 +12,20 @@ import { ListService  } from '../../service/list.service';
 })
 export class ListRenderComponent {
   animals: Animal[] = [
-    { name: 'Astro', type: 'Dog', age: '6'},
-    { name: 'Minho', type: 'Cat', age: '10' },
-    { name: 'Raja', type: 'Cat', age: '14' },
-    { name: 'Billy', type: 'Bird', age: '8' },
+
   ];
+
+  animal: Animal = {
+    name: "teste",
+    type: "teste",
+    age: '10',
+  };
 
   animalDetails = ''
 
-  constructor(private listService: ListService) {}
+  constructor(private listService: ListService) {
+    this.getAnimals()
+  }
 
   removeAnimal(animal: Animal) {
     console.log("removendo animal")
@@ -29,6 +34,10 @@ export class ListRenderComponent {
 
   showAge(animal: Animal) {
     this.animalDetails = `O Pet ${animal.name} tem ${animal.age} anos de idade!`;
+  }
+
+  getAnimals(): void {
+    this.listService.getAll().subscribe((a) => (this.animals = this.animals));
   }
 
 }
