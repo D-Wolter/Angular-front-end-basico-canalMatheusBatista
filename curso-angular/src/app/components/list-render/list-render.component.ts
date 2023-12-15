@@ -2,24 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Animal } from '../../interfaces/Animals';
 import { ListService  } from '../../service/list.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list-render',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './list-render.component.html',
   styleUrl: './list-render.component.css'
 })
 export class ListRenderComponent {
-  animals: Animal[] = [
+  animals: Animal[] = [];
 
-  ];
-
-  animal: Animal = {
-    name: "teste",
-    type: "teste",
-    age: '10',
-  };
 
   animalDetails = ''
 
@@ -28,8 +22,8 @@ export class ListRenderComponent {
   }
 
   removeAnimal(animal: Animal) {
-    console.log("removendo animal")
-    this.animals = this.listService.remove(this.animals, animal)
+    this.animals = this.animals.filter((item) => (animal.name !== item.name));
+    this.listService.remove(animal.id).subscribe();
   }
 
   showAge(animal: Animal) {
