@@ -37,7 +37,9 @@ export class ListRenderComponent {
   }
 
   getAnimals(): void {
-    this.listService.getAll().subscribe((a) => (this.animals = this.animals));
+    this.listService.getAll().subscribe((animals) => {
+      this.animals = animals;
+    });
   }
 
 }
