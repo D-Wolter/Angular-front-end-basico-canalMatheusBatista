@@ -1,6 +1,12 @@
 
 
 <h1>Hello World Angular</h1>
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/list">Lista Animais</a>
+</nav>
+<router-outlet></router-outlet>
+
 <app-first-component></app-first-component>
 <app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
 <app-directives></app-directives>

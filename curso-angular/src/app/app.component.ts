@@ -7,6 +7,7 @@ import { DirectivesComponent } from "./components/directives/directives.componen
 import { IfRenderComponent } from "./components/if-render/if-render.component";
 import { EventosComponent } from "./components/eventos/eventos.component";
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app.routes';
 
 import { EmitterComponent } from "./components/emitter/emitter.component";
 import { ListRenderComponent } from "./components/list-render/list-render.component";
@@ -18,7 +19,7 @@ import { TwoWayBindingComponent } from "./components/two-way-binding/two-way-bin
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [FormsModule, CommonModule, RouterOutlet, FirstComponentComponent, ParentDataComponent, DirectivesComponent, IfRenderComponent, EventosComponent, EmitterComponent, ListRenderComponent, PipesComponent, TwoWayBindingComponent]
+    imports: [AppRoutingModule, FormsModule, CommonModule, RouterOutlet, FirstComponentComponent, ParentDataComponent, DirectivesComponent, IfRenderComponent, EventosComponent, EmitterComponent, ListRenderComponent, PipesComponent, TwoWayBindingComponent]
 })
 export class AppComponent {
   userName = 'Dwolter';
